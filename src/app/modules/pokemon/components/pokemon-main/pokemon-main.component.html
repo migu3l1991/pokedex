@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-title>
+      {{ showActions ? (pokemonName | titlecase) : 'Pokemon List' }}
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar color="light">
+    <div class="actions-toolbar">
+      <div class="actions"
+           *ngIf="showActions">
+        <ion-button color="success"
+                    (click)="navigateBack()">
+          <ion-icon name="home-outline"></ion-icon>
+        </ion-button>
+        <ion-label>Home</ion-label>
+      </div>
+      <div class="actions">
+        <ion-button color="secondary"
+                    (click)="editProfile()">
+          <ion-icon name="person-circle-outline"></ion-icon>
+        </ion-button>
+        <ion-label>Profile</ion-label>
+      </div>
+      <div class="actions">
+        <ion-button color="danger"
+                    (click)="exit()">
+          <ion-icon name="log-out-outline"></ion-icon>
+        </ion-button>
+        <ion-label>Logout</ion-label>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scroll-y="true">
+  <ion-router-outlet></ion-router-outlet>
+</ion-content>

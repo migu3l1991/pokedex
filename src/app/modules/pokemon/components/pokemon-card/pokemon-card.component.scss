@@ -1,0 +1,27 @@
+.pokemon {
+  text-align: center;
+  padding: 15px;
+  width: 170px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px 1px lightgrey;
+}
+
+.pokemon-type-container {
+  display: flex;
+  place-content: space-evenly;
+  flex-wrap: wrap;
+
+  ion-label {
+    font-size: 10px;
+    color: white;
+    background-color: gray;
+    padding: 2px 12px;
+    border-radius: 4px;
+  }
+}
+
+.pokemon-name {
+  color: black;
+  font-weight: bold;
+}

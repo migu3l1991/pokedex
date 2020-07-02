@@ -1,0 +1,70 @@
+<ion-content>
+  <div class="container">
+    <div class="card">
+      <div class="image">
+        <ion-img [src]="pokemon?.sprites?.front_default"></ion-img>
+      </div>
+      <div class="info-container">
+        <div class="tag-value">
+          <div class="tag">
+            <ion-label>Id</ion-label>
+          </div>
+          <div class="value">
+            <ion-label>{{ pokemon.id }}</ion-label>
+          </div>
+        </div>
+        <div class="tag-value">
+          <div class="tag">
+            <ion-label>Name</ion-label>
+          </div>
+          <div class="value">
+            <ion-label>{{ pokemon.name | titlecase }}</ion-label>
+          </div>
+        </div>
+        <div class="tag-value">
+          <div class="tag">
+            <ion-label>Type</ion-label>
+          </div>
+          <div class="value">
+            <ion-label *ngFor="let type of pokemon.types"
+                       class="special" >{{ type.type.name | uppercase }}</ion-label>
+          </div>
+        </div>
+        <div class="tag-value">
+          <div class="tag">
+            <ion-label>Height</ion-label>
+          </div>
+          <div class="value">
+            <ion-label>{{ pokemon.height }}</ion-label>
+          </div>
+        </div>
+        <div class="tag-value">
+          <div class="tag">
+            <ion-label>Weight</ion-label>
+          </div>
+          <div class="value">
+            <ion-label>{{ pokemon.weight }}</ion-label>
+          </div>
+        </div>
+        <div class="tag-value">
+          <div class="tag">
+            <ion-label>Moves</ion-label>
+          </div>
+          <div class="value move">
+            <ion-label *ngFor="let move of pokemon.moves"
+                       class="special move">{{ move.move.name | titlecase }}</ion-label>
+          </div>
+        </div>
+        <div class="tag-value">
+          <div class="tag">
+            <ion-label>Chain Evolution</ion-label>
+          </div>
+          <div class="value">
+            <ion-label *ngFor="let evolution of evolutionsList"
+                       class="special" >{{ evolution | titlecase }}</ion-label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

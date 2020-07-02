@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  height: 100%;
+
+  .card {
+    width: 70%;
+    margin: auto;
+    padding: 6%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px lightgrey;
+
+    .input-fields {
+      margin-bottom: 5%;
+    }
+  }
+}
+
+.error {
+  color: red;
+  font-size: 10px;
+}

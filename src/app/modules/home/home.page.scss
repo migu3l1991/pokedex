@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  height: 100%;
+
+  .card {
+    width: 70%;
+    margin: auto;
+    padding: 10%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px lightgrey;
+
+    .header {
+      font-size: 30px;
+      font-weight: bolder;
+      text-align: center;
+    }
+
+    .image {
+      width: 48%;
+      display: flex;
+      margin: auto;
+      justify-content: center;
+    }
+
+    .input-fields, .login-button {
+      margin-bottom: 6%;
+    }
+
+    .create-account-option {
+      text-align: center;
+    }
+  }
+}
+
+.error {
+  color: red;
+  font-size: 10px;
+}

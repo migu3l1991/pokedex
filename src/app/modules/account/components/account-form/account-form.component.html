@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-title>
+      {{ editMode ? 'Update Profile' : 'Register' }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="card">
+      <div class="input-fields">
+        <form [formGroup]="accountForm">
+          <ion-input type="text"
+                     formControlName="name"
+                     placeholder="Name"></ion-input>
+          <mat-error *ngIf="accountForm.get('name').touched && accountForm.get('name').hasError('required')"
+                     class="error">
+            Name field is required
+          </mat-error>
+          <ion-input type="email"
+                     formControlName="email"
+                     [disabled]="editMode"
+                     placeholder="Email"></ion-input>
+          <mat-error *ngIf="accountForm.get('email').touched && accountForm.get('email').hasError('required')"
+                     class="error">
+            Email field is required
+          </mat-error>
+          <mat-error *ngIf="accountForm.get('email').touched && accountForm.get('email').hasError('pattern')"
+                     class="error">
+            Name field is required
+          </mat-error>
+          <ion-input type="password"
+                     formControlName="pass"
+                     placeholder="Password"></ion-input>
+          <mat-error *ngIf="accountForm.get('pass').touched && accountForm.get('pass').hasError('required')"
+                     class="error">
+            Password field is required
+          </mat-error>
+          <mat-error *ngIf="accountForm.get('pass').touched && accountForm.get('pass').hasError('mustMatch')"
+                     class="error">
+          Both passwords must be equals
+          </mat-error>
+          <ion-input type="password"
+                     formControlName="confirmPass"
+                     placeholder="Confirm Password"></ion-input>
+          <mat-error *ngIf="accountForm.get('confirmPass').touched && accountForm.get('confirmPass').hasError('required')"
+                     class="error">
+            Password field is required
+          </mat-error>
+          <mat-error *ngIf="accountForm.get('confirmPass').touched && accountForm.get('confirmPass').hasError('mustMatch')"
+                     class="error">
+            Both passwords must be equals
+          </mat-error>
+        </form>
+      </div>
+      <div class="buttons">
+        <div class="register-button">
+          <ion-button color="success"
+                      expand="block"
+                      [disabled]="!accountForm.valid"
+                      (click)="saveUser()">Register</ion-button>
+        </div>
+        <div class="back-button">
+          <ion-button color="danger"
+                      expand="block"
+                      (click)="back()">Cancel</ion-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

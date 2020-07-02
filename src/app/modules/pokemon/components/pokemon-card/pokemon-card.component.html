@@ -1,0 +1,11 @@
+<div class="pokemon">
+  <div class="pokemon-name">
+    <ion-label>{{ pokemon.name | titlecase }}</ion-label>
+  </div>
+  <div>
+    <ion-img [src]="pokemon.sprites.front_default"></ion-img>
+  </div>
+  <div class="pokemon-type-container">
+    <ion-label *ngFor="let type of pokemon.types">{{ type.type.name | uppercase }}</ion-label>
+  </div>
+</div>

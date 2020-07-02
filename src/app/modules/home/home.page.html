@@ -1,0 +1,33 @@
+<ion-content>
+  <div class="container">
+    <div class="card">
+      <div class="header">
+        <ion-label>Login</ion-label>
+      </div>
+      <div class="image">
+        <ion-img [src]="'/assets/pikachu.png'"></ion-img>
+      </div>
+      <div class="input-fields">
+        <ion-input type="email"
+                   pattern="email"
+                   placeholder="Email"
+                   #email></ion-input>
+        <ion-input type="password"
+                   placeholder="Password"
+                   #pass></ion-input>
+        <mat-error *ngIf="error"
+                   class="error">
+          Check the information
+        </mat-error>
+      </div>
+      <div class="login-button">
+        <ion-button color="success"
+                    expand="block"
+                    (click)="login(email.value, pass.value)">Login</ion-button>
+      </div>
+      <div class="create-account-option">
+        <ion-label>Create an <a routerLink="account">Account</a></ion-label>
+      </div>
+    </div>
+  </div>
+</ion-content>

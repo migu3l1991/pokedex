@@ -1,0 +1,20 @@
+<div class="search-section"
+     slot="fixed">
+  <ion-input placeholder="Type pokemon name or pokemon type"
+             #input></ion-input>
+  <ion-button (click)="searchPokemonByName(input.value)">Search</ion-button>
+</div>
+<ion-content class="ion-justify-content-center">
+<div class="pokemon-card-container">
+  <app-pokemon-card *ngFor="let pokemon of pokemonList"
+                    class="pokemon-card"
+                    (click)="showHomeAction(pokemon)"
+                    [routerLink]="['detail/'+pokemon.id]"
+                    [pokemon]="pokemon"></app-pokemon-card>
+</div>
+<ion-infinite-scroll (ionInfinite)="loadData($event)">
+  <ion-infinite-scroll-content loadingSpinner="bubbles"
+                               loadingText="Loading more data...">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+</ion-content>
